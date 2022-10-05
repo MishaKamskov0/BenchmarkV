@@ -10,4 +10,7 @@
 
     <color name="main">#FFAA00</color>
     <color name="color_error">#FF0000</color>
+    <color name="light_grey">#F3F2F5</color>
+    <color name="stroke_gray">#B8B6BF</color>
+    <color name="hint_grey">#8D8D8D</color>
 </resources>

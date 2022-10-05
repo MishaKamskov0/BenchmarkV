@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomButton">
+        <item name="cornerRadius">10dp</item>
+        <item name="android:backgroundTint">@color/main</item>
+        <item name="android:paddingBottom">21dp</item>
+        <item name="android:paddingTop">21dp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CustomEdit">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="hintTextColor">@color/hint_grey</item>
+        <item name="android:inputType">number</item>
+        <item name="paddingStart">18dp</item>
+        <item name="android:background">@drawable/bg_enter_size</item>
+    </style>
+</resources>
