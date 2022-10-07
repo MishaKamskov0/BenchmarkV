@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">BenchmarkV</string>
     <string name="enter_size_str">Please enter collection size and number of elements to compare</string>
+    <string name="collection_size">Сollection size</string>
 </resources>
