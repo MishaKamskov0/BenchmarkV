@@ -34,6 +34,7 @@ public class CollectionRecyclerAdapter extends RecyclerView.Adapter<CollectionRe
     @Override
     public void onBindViewHolder(@NonNull CollectionRecyclerAdapter.ViewHolder holder, int position) {
         holder.hNameProcess.setText("Adding\n" + "in the beginning ArrayList N/A ms");
+        //holder.hNameProcess.setText(list[position].getNameOfProcess());
     }
 
     @Override
