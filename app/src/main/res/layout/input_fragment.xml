@@ -42,10 +42,10 @@
 
         <EditText
             android:id="@+id/editCollectionSize"
-            android:background="@drawable/base_edit_background"
-            android:inputType="number"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:background="@drawable/base_edit_background"
+            android:inputType="number" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
