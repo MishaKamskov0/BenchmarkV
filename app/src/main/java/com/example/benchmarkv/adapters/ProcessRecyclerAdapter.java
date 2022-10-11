@@ -33,6 +33,7 @@ public class ProcessRecyclerAdapter extends RecyclerView.Adapter<ProcessRecycler
     @Override
     public void onBindViewHolder(@NonNull ProcessRecyclerAdapter.ViewHolder holder, int position) {
         holder.hNameProcess.setText("Adding\n" + "in the beginning ArrayList N/A ms");
+        //holder.hNameProcess.setText(list[position].getNameOfProcess());
     }
 
     @Override
