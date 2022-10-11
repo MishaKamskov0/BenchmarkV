@@ -13,15 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.benchmarkv.R;
-import com.example.benchmarkv.adapters.CollectionRecyclerAdapter;
-
-import java.util.ArrayList;
+import com.example.benchmarkv.adapters.ProcessRecyclerAdapter;
 
 
 public class MapFragment extends Fragment {
 
     private RecyclerView processRecyclerView;
-    private CollectionRecyclerAdapter rvAdapter;
+    private ProcessRecyclerAdapter rvAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,7 +34,7 @@ public class MapFragment extends Fragment {
         processRecyclerView = view.findViewById(R.id.mapRecycler);
         processRecyclerView.setLayoutManager(new GridLayoutManager(this.getContext(), 3));
 
-        rvAdapter = new CollectionRecyclerAdapter();
+        rvAdapter = new ProcessRecyclerAdapter();
         processRecyclerView.setAdapter(rvAdapter);
     }
 

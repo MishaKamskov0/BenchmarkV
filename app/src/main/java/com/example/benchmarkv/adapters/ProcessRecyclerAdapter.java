@@ -11,28 +11,27 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.benchmarkv.R;
 
-public class CollectionRecyclerAdapter extends RecyclerView.Adapter<CollectionRecyclerAdapter.ViewHolder> {
+public class ProcessRecyclerAdapter extends RecyclerView.Adapter<ProcessRecyclerAdapter.ViewHolder> {
 
     ProcessCollection[] list;
 
 
-    public CollectionRecyclerAdapter() {
-
+    public ProcessRecyclerAdapter() {
 
     }
 
-    public CollectionRecyclerAdapter(ProcessCollection[] list) {
+    public ProcessRecyclerAdapter(ProcessCollection[] list) {
         this.list = list;
     }
 
     @NonNull
     @Override
-    public CollectionRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ProcessRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_process, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CollectionRecyclerAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ProcessRecyclerAdapter.ViewHolder holder, int position) {
         holder.hNameProcess.setText("Adding\n" + "in the beginning ArrayList N/A ms");
     }
 

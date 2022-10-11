@@ -4,10 +4,13 @@
     <style name="CustomButton">
         <item name="cornerRadius">10dp</item>
         <item name="android:backgroundTint">@color/main</item>
-        <item name="android:paddingBottom">21dp</item>
-        <item name="android:paddingTop">21dp</item>
+        <item name="android:paddingBottom">20dp</item>
+        <item name="android:paddingTop">20dp</item>
         <item name="android:textSize">14sp</item>
     </style>
+
+
+
 
 
 </resources>
