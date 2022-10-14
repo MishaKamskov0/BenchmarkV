@@ -6,7 +6,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +16,12 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.benchmarkv.R;
+import com.example.benchmarkv.databinding.FragmentCollectionBinding;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 
-public class CollectionFragment extends Fragment {
+public class CollectionFragment extends Fragment implements TextWatcher {
 
     Button btCalculate;
     TextInputLayout til;
@@ -31,6 +34,8 @@ public class CollectionFragment extends Fragment {
         return inflater.inflate(R.layout.input_fragment, container, false);
     }
 
+
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -39,6 +44,9 @@ public class CollectionFragment extends Fragment {
         til = view.findViewById(R.id.outlinedTextField);
         editCollectionSize = view.findViewById(R.id.editCollectionSize);
         btCalculate.setOnClickListener(v -> clickOnCalculate());
+
+
+        editCollectionSize.addTextChangedListener(this);
     }
 
     private void clickOnCalculate() {
@@ -50,6 +58,23 @@ public class CollectionFragment extends Fragment {
             editCollectionSize.setBackground(getResources().getDrawable(R.drawable.base_edit_background));
             til.setError(null);
         }
+
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+        if(!TextUtils.isEmpty(editCollectionSize.getText())){
+            editCollectionSize.setTextSize(20);
+
+        }
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
 
     }
 }

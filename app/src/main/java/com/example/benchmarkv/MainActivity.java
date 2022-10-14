@@ -5,25 +5,24 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
+import com.example.benchmarkv.databinding.ActivityMainBinding;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TabLayout mainTabLayout;
-    private ViewPager mainViewPager;
+    private ActivityMainBinding bind;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        createViewPager();
+
+        bind = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(bind.getRoot());
+
+
+
+        bind.mainViewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
+        bind.mainTabLayout.setupWithViewPager(bind.mainViewPager);
     }
 
-    private void createViewPager(){
-        mainViewPager = findViewById(R.id.mainViewPager);
-        mainViewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
-
-        mainTabLayout = findViewById(R.id.mainTabLayout);
-        mainTabLayout.setupWithViewPager(mainViewPager);
-    }
 }

@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -45,12 +46,12 @@ public class ProcessRecyclerAdapter extends RecyclerView.Adapter<ProcessRecycler
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView hNameProcess;
-        ImageView hIndicator;
+        ProgressBar hIndicator;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             hNameProcess = itemView.findViewById(R.id.tvNameProcess);
-            hIndicator = itemView.findViewById(R.id.imgIndicator);
+            hIndicator = itemView.findViewById(R.id.progress_indicator);
         }
     }
 }

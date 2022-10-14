@@ -28,6 +28,8 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         return new CollectionFragment();
     }
 
+
+
     @Override
     public int getCount() {
         return namesOfTabs.length;
