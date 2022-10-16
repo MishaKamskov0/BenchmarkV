@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.benchmarkv.ui_fragments.CollectionFragment;
+import com.example.benchmarkv.ui_fragments.InputFragment;
 import com.example.benchmarkv.ui_fragments.MapFragment;
 
 
@@ -25,7 +26,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             case 1:
                 return new MapFragment();
         }
-        return new CollectionFragment();
+        return new InputFragment();
     }
 
 

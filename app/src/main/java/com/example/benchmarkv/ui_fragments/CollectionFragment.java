@@ -21,7 +21,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 
-public class CollectionFragment extends Fragment implements TextWatcher {
+public class CollectionFragment extends Fragment {
 
     Button btCalculate;
     TextInputLayout til;
@@ -31,7 +31,7 @@ public class CollectionFragment extends Fragment implements TextWatcher {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.input_fragment, container, false);
+        return inflater.inflate(R.layout.fragment_collection, container, false);
     }
 
 
@@ -39,42 +39,10 @@ public class CollectionFragment extends Fragment implements TextWatcher {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        btCalculate = view.findViewById(R.id.bt_calculate);
-
-        til = view.findViewById(R.id.outlinedTextField);
-        editCollectionSize = view.findViewById(R.id.editCollectionSize);
-        btCalculate.setOnClickListener(v -> clickOnCalculate());
 
 
-        editCollectionSize.addTextChangedListener(this);
-    }
-
-    private void clickOnCalculate() {
-
-        if (TextUtils.isEmpty(editCollectionSize.getText().toString().trim()) || Integer.parseInt(editCollectionSize.getText().toString()) < 1000000 || Integer.parseInt(editCollectionSize.getText().toString()) > 10000000){
-            editCollectionSize.setBackground(getResources().getDrawable(R.drawable.error_edit_background));
-            til.setError("Error.You need enter elements count.");
-        }else{
-            editCollectionSize.setBackground(getResources().getDrawable(R.drawable.base_edit_background));
-            til.setError(null);
-        }
 
     }
 
-    @Override
-    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-    }
 
-    @Override
-    public void onTextChanged(CharSequence s, int start, int before, int count) {
-        if(!TextUtils.isEmpty(editCollectionSize.getText())){
-            editCollectionSize.setTextSize(20);
-
-        }
-    }
-
-    @Override
-    public void afterTextChanged(Editable s) {
-
-    }
 }
