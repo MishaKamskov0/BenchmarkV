@@ -3,7 +3,6 @@ package com.example.benchmarkv.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -12,16 +11,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.benchmarkv.R;
 
+import java.util.List;
+
 public class ProcessRecyclerAdapter extends RecyclerView.Adapter<ProcessRecyclerAdapter.ViewHolder> {
 
-    ProcessCollection[] list;
+    List<ProcessItem> list;
 
 
-    public ProcessRecyclerAdapter() {
 
-    }
 
-    public ProcessRecyclerAdapter(ProcessCollection[] list) {
+    public ProcessRecyclerAdapter(List<ProcessItem> list) {
         this.list = list;
     }
 
@@ -33,20 +32,19 @@ public class ProcessRecyclerAdapter extends RecyclerView.Adapter<ProcessRecycler
 
     @Override
     public void onBindViewHolder(@NonNull ProcessRecyclerAdapter.ViewHolder holder, int position) {
-        holder.hNameProcess.setText("Adding\n" + "in the beginning ArrayList N/A ms");
-        //holder.hNameProcess.setText(list[position].getNameOfProcess());
+        holder.hNameProcess.setText(list.get(position).getNameOfProcess());
     }
 
     @Override
     public int getItemCount() {
-        //return list.length;
-        return 21;
+        return list.size();
+
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView hNameProcess;
-        ProgressBar hIndicator;
+        private final TextView hNameProcess;
+        private final ProgressBar hIndicator;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

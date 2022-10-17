@@ -1,11 +1,15 @@
 package com.example.benchmarkv.adapters;
 
-public class ProcessCollection {
+public class ProcessItem {
 
     String nameOfProcess;
     Boolean indicator;
 
-    public ProcessCollection(String nameOfProcess, Boolean indicator) {
+    public ProcessItem(String nameOfProcess) {
+        this.nameOfProcess = nameOfProcess;
+    }
+
+    public ProcessItem(String nameOfProcess, Boolean indicator) {
         this.nameOfProcess = nameOfProcess;
         this.indicator = indicator;
     }

@@ -1,4 +1,5 @@
-package com.example.benchmarkv;
+package com.example.benchmarkv.adapters;
+
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -6,17 +7,18 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.benchmarkv.ui_fragments.CollectionFragment;
-import com.example.benchmarkv.ui_fragments.InputFragment;
 import com.example.benchmarkv.ui_fragments.MapFragment;
 
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
-    private String[] namesOfTabs = {"Collections", "Maps"};
+    String[] namesOfTabs;
 
-    public ViewPagerAdapter(@NonNull FragmentManager fm) {
+    public ViewPagerAdapter(@NonNull FragmentManager fm, String[] namesOfTabs) {
         super(fm);
+        this.namesOfTabs = namesOfTabs;
     }
+
 
     @NonNull
     @Override
@@ -26,9 +28,8 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             case 1:
                 return new MapFragment();
         }
-        return new InputFragment();
+        return new CollectionFragment();
     }
-
 
 
     @Override
@@ -38,6 +39,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
+
         return namesOfTabs[position];
     }
 }

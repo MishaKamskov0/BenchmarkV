@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui_fragments.MapFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+        android:id="@+id/til_amount"
         android:layout_width="0dp"
         android:layout_height="64dp"
-        android:hint="Elements amount:"
+        android:hint="@string/elements_amount_hint"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
         app:hintTextColor="@color/hint_grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.05"
@@ -26,11 +23,12 @@
 
 
         <EditText
+            android:id="@+id/edit_elements_amount"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/base_edit_background"
             android:inputType="number"
-            android:text="Enter a number"
+            android:text="@string/enter_a_number"
             android:textSize="17sp"
             android:textStyle="bold" />
 
@@ -38,25 +36,25 @@
 
 
     <Button
+        android:id="@+id/bt_start_stop"
         style="@style/CustomButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Start"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout2"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
-        app:layout_constraintTop_toTopOf="@+id/textInputLayout2"
+        android:text="@string/start"
+        app:layout_constraintBottom_toBottomOf="@+id/til_amount"
+        app:layout_constraintEnd_toEndOf="@+id/til_amount"
+        app:layout_constraintTop_toTopOf="@+id/til_amount"
         app:layout_constraintWidth_percent="0.34" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mapRecycler"
+        android:id="@+id/processItemsRecycler"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/til_amount"
         app:layout_constraintWidth_percent="0.86" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
