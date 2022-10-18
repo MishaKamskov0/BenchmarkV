@@ -2,8 +2,8 @@ package com.example.benchmarkv.adapters;
 
 public class ProcessItem {
 
-    String nameOfProcess;
-    Boolean indicator;
+    private String nameOfProcess;
+    private Boolean indicator;
 
     public ProcessItem(String nameOfProcess) {
         this.nameOfProcess = nameOfProcess;

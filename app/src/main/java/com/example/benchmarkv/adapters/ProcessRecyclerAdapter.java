@@ -10,15 +10,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.benchmarkv.R;
+import com.example.benchmarkv.databinding.ItemProcessBinding;
 
 import java.util.List;
 
 public class ProcessRecyclerAdapter extends RecyclerView.Adapter<ProcessRecyclerAdapter.ViewHolder> {
 
     List<ProcessItem> list;
-
-
-
 
     public ProcessRecyclerAdapter(List<ProcessItem> list) {
         this.list = list;
@@ -32,7 +30,7 @@ public class ProcessRecyclerAdapter extends RecyclerView.Adapter<ProcessRecycler
 
     @Override
     public void onBindViewHolder(@NonNull ProcessRecyclerAdapter.ViewHolder holder, int position) {
-        holder.hNameProcess.setText(list.get(position).getNameOfProcess());
+        holder.bind(list.get(position));
     }
 
     @Override
@@ -50,6 +48,10 @@ public class ProcessRecyclerAdapter extends RecyclerView.Adapter<ProcessRecycler
             super(itemView);
             hNameProcess = itemView.findViewById(R.id.tvNameProcess);
             hIndicator = itemView.findViewById(R.id.progress_indicator);
+        }
+
+        public void bind(ProcessItem item){
+            hNameProcess.setText(item.getNameOfProcess());
         }
     }
 }

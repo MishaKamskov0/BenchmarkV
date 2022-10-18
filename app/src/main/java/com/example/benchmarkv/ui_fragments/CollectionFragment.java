@@ -1,5 +1,6 @@
 package com.example.benchmarkv.ui_fragments;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.benchmarkv.R;
 import com.example.benchmarkv.adapters.ProcessItem;
@@ -20,10 +22,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class CollectionFragment extends Fragment {
+public class CollectionFragment extends Fragment implements View.OnClickListener {
 
 
     private ProcessRecyclerAdapter rvAdapter;
+    private Button btStartStop;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,16 +42,19 @@ public class CollectionFragment extends Fragment {
         RecyclerView processRecyclerView = view.findViewById(R.id.processItemsRecycler);
         processRecyclerView.setLayoutManager(new GridLayoutManager(this.getContext(), 3));
 
-        rvAdapter = new ProcessRecyclerAdapter(fillRecyclerView());
+        rvAdapter = new ProcessRecyclerAdapter(fillCollectionRecyclerView());
         processRecyclerView.setAdapter(rvAdapter);
+
+        btStartStop = view.findViewById(R.id.bt_start_stop);
+        btStartStop.setOnClickListener(this);
     }
 
 
 
-    private List<ProcessItem> fillRecyclerView(){
+    private List<ProcessItem> fillCollectionRecyclerView(){
 
         List<ProcessItem> data = new ArrayList<>();
-        String[] operations = getResources().getStringArray(R.array.operations);
+        String[] operations = getResources().getStringArray(R.array.collections_operations);
 
         for (int i = 0; i < operations.length; i++) {
             data.add(new ProcessItem( operations[i] + getString(R.string.str_array_ms)));
@@ -59,4 +66,15 @@ public class CollectionFragment extends Fragment {
     }
 
 
+    @Override
+    public void onClick(View v) {
+
+        if (btStartStop.getText().toString().equals(getResources().getString(R.string.start))){
+            btStartStop.setText(getResources().getString(R.string.stop));
+            btStartStop.setBackgroundColor(Color.BLACK);
+        }else {
+            btStartStop.setText(getResources().getString(R.string.start));
+            btStartStop.setBackgroundColor(getResources().getColor(R.color.main));
+        }
+    }
 }
